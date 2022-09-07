@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Fira+Sans+Condensed:ital@0;1&family=Inconsolata:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --primary: #2d2f4e;
+  --secondary: #8f50e6;
+  --transition: #673AB7;
+  --base: #7f829a;
+  --shadow: #000;
+  --letter: #fff;
+}
+
+body{
+  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Inconsolata', monospace;
+ 
+}
+
+.header{
+  width: 100%;
+  height: 100px;
+  background-color: var(--primary);
+  padding: 18px 80px;
+  position: fixed;
+  padding-bottom: 25px;
+  box-shadow: 0px 1px 5px var(--shadow);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header img{
+  width: auto;
+  height: 90px;
+  padding-top: 5px;
+  margin-right: 550px;
+}
+
+.app{
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(./assets/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+/*estilos para el cuerpo de la pagina*/
+.container{
+  width: 95%;
+  height: auto;
+  margin: auto;
+  margin-top: 0;
+  background: var(--base);
+  opacity: 0.8;
+  padding-top: 15px;
+}
+
+h1{
+  text-align: center;
+  font-size: 45px;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  letter-spacing: 8px;
+  color: var(--transition);
+  padding-bottom: 15px;
+  text-shadow: #000 0.5px 1px 0.6px;
+}
+
+.trending{
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+/*estilos para las tarjetas de las series*/
+.containerCard{
+  display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+}
+
+.card{
+  width: 250px;
+  border-radius: 10px;
+  background-color: var(--secondary);
+  box-shadow: 0.2px 4px 5px rgba(0,0,0,0.5);
+  font-family: 'Fira Sans', sans-serif;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card img{
+  width: 100%;
+  height: 400px;
+}
+
+.movie-info{
+  color:var(--letter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  letter-spacing: 1px;
+}
+
+.movie-info h3{
+  margin-top: 0;
+  font-size: 20px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.movie-info span{
+  background-color: var(--primary);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/*cambio de colores en el contenido del span dependiendo de la calificacion*/
+.movie-info span.green{
+  color: var(--green);
+}
+
+.movie-info span.orange{
+  color: var(--orange);
+}
+
+.movie-info span.red{
+  color: var(--red);
+}
+
+/*descripcion de la pelicula*/
+.overview{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--letter);
+  padding: 10px;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.4s ease-in;
+  text-align: justify;
+}
+
+.card:hover .overview{
+  transform: translateY(0);
+  cursor: pointer;
+}
+
+.overview h3{
+  color: var(--secondary);
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 19px;
+}
+
+.overview p{
+  font-size: 15px;
+  padding: 5px;
+}
+
+.overview span{
+  float: right;
+  padding: 0 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+.search{
+  height: 100vh;
+}
+
+/*contenedor del pie de página*/
+footer{
+  width: 100%;
+  height: 150px;
+  background: var(--primary);
+  text-align: center;
+  color: var(--letter);
+  padding: 30px;
+  font-size: 20px;
+}
+
+footer p{
+  margin-bottom: 15px;
+}
+
+/*Medias querys*/
+@media(max-width:900px){
+  .header img{
+    width: 220px;
+    height: 80px;
+    margin-top: 5px;
+    margin-right: 30px;
+  }
+  .app{
+    padding-top: 90px;
+  }
+}
